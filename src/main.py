@@ -49,7 +49,7 @@ if __name__ == "__main__":
         "--api-key",
         help="Polygon.io API key",
         type=str,
-        default="5MQqc0X4vZjap5jpjLxmJ1Lco_yBddG5",
+        required=True
     )
 
     parser.add_argument(

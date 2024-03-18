@@ -1,11 +1,19 @@
 # STRATOS Technical Test Solution
-The solution answers three question regarding the list of stocks provided.
+The solution answers three questions regarding stocks provided.
 1. Which stock has had the greatest relative increase in price in this period?
 2. If you had invested $1 million at the beginning of this period by purchasing $10,000 worth of shares in every company in the list equally, how much would you have today?
 3. Which stock had the highest CAGR during the period?
 
 
-The solution has been designed in such a way that it can accept user arguments to update parameters to the analysis sucuh period start and end dates as well as the csv file to be used. 
+
+## Overview
+The solution has been designed in such a way that it can accept user arguments to update parameters to the analysis to allow customs period start and end dates as well as being able to specify csv file to be used. 
+
+The solution reads user arguments and uses default values where it is not provided. The data file is read and a list of tickers is generated from it. The list is then used to call the Polygon API for all necessary inforation in the mentioned period. The data is parsed and returned as a set which is used to create a list of sets and will be used to create a PySpark dataframe. This data frame is used to generate the relative change the stock value. This dataframe will then be used to answer the three questions by making use of PySpark aggregations and transformations.
+
+The aggregates will then be used to create a report that will be generated and stored with a timestamp in the filename. It will be available in the `reports` folder.
+
+
 
 ## Option to run customs datasets and dates
 The solution can accept a total of 4 user arguments, of which 3 user arguments that can be used to run differnt data set for differnt dates.
@@ -13,7 +21,6 @@ The solution can accept a total of 4 user arguments, of which 3 user arguments t
 - --api-key (Required): The Polygon.io API key. Rate limts have been set assuming a paid API key would be used. Polygon.io recommeds a maximum of 100 requests per second(https://polygon.io/knowledge-base/article/what-is-the-request-limit-for-polygons-restful-apis), it has been limited to 80 in the solution.
 - --start-date (Optional): Custom start date for analysis in `YYYY-MM-DD`
 - --end-dates (Optional): Custom end date for analysis in `YYYY-MM-DD`
-
 
 
 
@@ -31,6 +38,7 @@ The solution can accept a total of 4 user arguments, of which 3 user arguments t
     `pytest .`
 6. Run analysis
     `python src/main.py --file-location < Custom CSV file location (OPTIONAL) > --api-key <Polygon.io API key> --start-date < Custom CSV start date (OPTIONAL)> --end-date < Custom CSV end date (OPTIONAL) >`        
+
 
 
 ## Output Report
