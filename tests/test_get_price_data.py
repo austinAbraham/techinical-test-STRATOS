@@ -2,7 +2,7 @@
 Tests for get_price_data()
 """
 
-from src.main import get_price_data, valid_date
+from src.main import get_price_data
 from datetime import date
 
 

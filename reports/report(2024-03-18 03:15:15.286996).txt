@@ -1,0 +1,14 @@
+Analysis Report
+===============
+
+Report generated at 2024-03-18 03:15:15.287147
+
+Analysis period start: 2022-06-01
+Analysis period end: 2022-06-02
+
+MSFT had the greatest relative increase during the period.
+Relative increase in value: $-1.66%
+
+Buying $10,000 worth of shares of each compamy would have a total value of $19,448.37 at the period end.
+
+AAPL had the highest CAGR gain over the period with 1.040%
